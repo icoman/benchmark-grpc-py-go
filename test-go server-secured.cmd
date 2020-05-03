@@ -12,6 +12,6 @@ cd ..\go-client
 go run . -host %HOST% -bs %BS% -n %N% -secured
 cd ..\py-client-server
 echo.
-python client.py -host %HOST% -bs %BS% -n %N% -secured
+c:\Python38-32\python client.py -host %HOST% -bs %BS% -n %N% -secured
 pause
  

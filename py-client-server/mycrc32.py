@@ -1,3 +1,6 @@
+import sys
+
+
 
 # from golang package crc32
 
@@ -49,8 +52,12 @@ def crc32(data):
         crctable = _GenerateCRCTable(IEEE)
     accum = 0
     accum = ~accum
-    for b in data:
-        accum = crctable[(accum ^ ord(b)) & 0xFF] ^ ((accum >> 8) & 0x00FFFFFF)
+    if sys.version_info >= (3, 0):
+        for b in data:
+            accum = crctable[(accum ^ b) & 0xFF] ^ ((accum >> 8) & 0x00FFFFFF)
+    else:
+        for b in data:
+            accum = crctable[(accum ^ ord(b)) & 0xFF] ^ ((accum >> 8) & 0x00FFFFFF)
     accum = ~accum
     return accum & 0xFFFFFFFF
 
