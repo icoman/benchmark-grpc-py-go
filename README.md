@@ -53,7 +53,7 @@ start "go gRPC server secure on %HOST%" go run . -host %HOST% -secured
 
 ![go server](screenshots/go-server.jpg)
 
-## Both, go and py, clients call go server with block size 2048 KB:
+## Both, go and py, clients call go server with batch size 2048 KB:
 
 ```cmd
 SET HOST=localhost:6002
@@ -78,7 +78,7 @@ start "py gRPC server secure on %HOST%" python server.py -host %HOST% -secured
 
 ![py server](screenshots/py-server.jpg)
 
-## Both, go and py, clients call py server with block size 2048 KB:
+## Both, go and py, clients call py server with batch size 2048 KB:
 
 ```cmd
 SET HOST=localhost:6004
