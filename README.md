@@ -21,15 +21,14 @@ service MyRPC1 {
 }
 
 message Response {
-    string text = 1; // server text etsponse
+    string text = 1; // server response
     uint32 crc32 = 2; // computed crc32 of received buffer
 }
 
 message Benchmark {
-    string name = 1; // test name
+    string name = 1; // benchmark name
     bytes buffer = 2; // benchmark buffer
 }
-
 ```
 
 The [protoc compiler](https://github.com/protocolbuffers/protobuf/releases) generate "stub files" used to build the code.
@@ -42,6 +41,8 @@ The servers can use an [OpenSSL](https://www.openssl.org/) certificate, but the 
 
 The servers compute crc32 of received buffer and return it to client, 
 the clients also compute crc32 of buffer and verify it.
+
+The Python implementation works on both Python 2.7 and Python 3.8
 
 ## Calling the go server:
 

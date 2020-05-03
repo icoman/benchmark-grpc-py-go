@@ -10,11 +10,11 @@ service MyRPC1 {
 }
 
 message Response {
-    string text = 1; // server text etsponse
+    string text = 1; // server response
     uint32 crc32 = 2; // computed crc32 of received buffer
 }
 
 message Benchmark {
-    string name = 1; // test name
+    string name = 1; // benchmark name
     bytes buffer = 2; // benchmark buffer
 }
