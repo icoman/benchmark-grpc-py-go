@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+
+option go_package = ".;service1";
+
+service MyRPC1 {
+    // just one function inside RPC server
+    rpc Test1(Benchmark) returns(Response){}
+
+}
+
+message Response {
+    string text = 1; // server text etsponse
+    uint32 crc32 = 2; // computed crc32 of received buffer
+}
+
+message Benchmark {
+    string name = 1; // test name
+    bytes buffer = 2; // benchmark buffer
+}
